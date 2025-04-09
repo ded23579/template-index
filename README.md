@@ -6,11 +6,11 @@
 
 📌 Lihat contoh:  
 👉 [Demo langsung di GitHub Pages](https://ded23579.github.io/template-index/)  
-👉 [Tersedia juga di Edu Abjad](https://edu.abjad.eu.org/)
+👉 [Tersedia juga di edu.abjd.eu.org](https://edu.abjad.eu.org/)
 
 ---
 
-## 📦 Fitur Utama
+## Fitur Utama
 
 - ✅ Struktur sederhana dan mudah dipahami  
 - ✅ Tidak membutuhkan framework berat  
@@ -20,7 +20,7 @@
 
 ---
 
-## 🗂️ Daftar Template
+## Daftar Template
 
 | Nama Template | Teknologi | Deskripsi Singkat |
 |---------------|-----------|--------------------|
