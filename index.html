@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>link Dedi IR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        
+    <!-- Title dan Deskripsi -->
+    <meta name="description" content="backlink, seo, ai, semua, shopping, gambar, video, berita, maps, video singkat">
+    
+    <!-- Kata Kunci -->
+    <meta name="keywords" content="backlink, seo, ai, semua, shopping, gambar, video, berita, maps, video singkat">
+    
+    <!-- Robots Indexing -->
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (untuk share di media sosial) -->
+    <meta property="og:title" content="Dedi Ir">
+    <meta property="og:description" content="backlink, seo, ai, semua, shopping, gambar, video, berita, maps, video singkat">
+    <meta property="og:image" content="https://ded23579.github.io/image/main_photo.webp">
+    <meta property="og:type" content="backlink, seo, ai, semua, shopping, gambar, video, berita, maps, video singkat">
+    <meta name="google-site-verification" content="2NQ0hJyxI8UYVjzw0-s_Kz4KMQW4YOY4gw8AsUA-o_E" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="https://dedi-ir.pages.dev">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Dedi IR",
+        "url": "https://dedi-ir.pages.dev",
+        "description": "backlink, seo, ai, semua, shopping, gambar, video, berita, maps, video singkat"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dedi Ir",
+        "url": "https://dedi-ir.pages.dev",
+        "image": "https://ded23579.github.io/images/Dedi-Ir.webp",
+        "description": "backlink, seo, ai, semua, shopping, gambar, video, berita, maps, video singkat",
+        "sameAs": [
+            "https://www.instagram.com/ded.dedii",
+            "https://github.com/ded23579"
+        ]
+    }
+    </script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      padding-bottom: 20px; /* Tambahan jarak bawah */
+    }
+
+    h2 {
+      margin: 20px 0;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    #linkContainer {
+      width: 90%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 20px; /* Tambahan jarak bawah */
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: #00bfff;
+      background-color: #333;
+      padding: 10px 15px;
+      border-radius: 6px;
+      width: 100%;
+      box-sizing: border-box;
+      word-break: break-word;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #444;
+      color: #1e90ff;
+    }
+
+    @media (min-width: 768px) {
+      a {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      a {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Dedi Ir</h2>
+  <div id="linkContainer">---link akan muncul di bawah ini---</-link></div>
+
+  <script>
+    const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRBycVvqTwGECvY_a4ugvUYFCZsmsGdfGkhYk0G6yoy0btBH4VCm4S20UpEBeFMRsUoFHq5a1my5KYU/pub?output=csv";
+
+    fetch(csvUrl)
+      .then(response => response.text())
+      .then(csv => {
+        const rows = csv.trim().split('\n');
+        const container = document.getElementById('linkContainer');
+
+        for (let i = 1; i < rows.length; i++) { // mulai dari baris ke-2 (skip header)
+          const cols = rows[i].split(',');
+          const url = cols[1]?.trim(); // kolom ke-2
+
+          if (url && url.startsWith('http')) {
+            const a = document.createElement('a');
+            a.href = url;
+            a.textContent = url;
+            a.target = '_blank';
+            container.appendChild(a);
+          }
+        }
+      })
+      .catch(err => {
+        document.getElementById('linkContainer').textContent = 'Gagal memuat data: ' + err;
+      });
+  </script>
+</body>
+</html>
