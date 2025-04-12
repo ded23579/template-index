@@ -115,7 +115,32 @@
 <body>
   <h2>Dedi Ir</h2>
   <div id="linkContainer">---link akan muncul di bawah ini---</-link></div>
+  <noscript>
+    const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRBycVvqTwGECvY_a4ugvUYFCZsmsGdfGkhYk0G6yoy0btBH4VCm4S20UpEBeFMRsUoFHq5a1my5KYU/pub?output=csv";
 
+    fetch(csvUrl)
+      .then(response => response.text())
+      .then(csv => {
+        const rows = csv.trim().split('\n');
+        const container = document.getElementById('linkContainer');
+
+        for (let i = 1; i < rows.length; i++) { // mulai dari baris ke-2 (skip header)
+          const cols = rows[i].split(',');
+          const url = cols[1]?.trim(); // kolom ke-2
+
+          if (url && url.startsWith('http')) {
+            const a = document.createElement('a');
+            a.href = url;
+            a.textContent = url;
+            a.target = '_blank';
+            a.rel = "noopener";
+            container.appendChild(a);
+          }
+        }
+      })
+      .catch(err => {
+        document.getElementById('linkContainer').textContent = 'Gagal memuat data: ' + err;
+      });</noscript>
   <script>
     const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRBycVvqTwGECvY_a4ugvUYFCZsmsGdfGkhYk0G6yoy0btBH4VCm4S20UpEBeFMRsUoFHq5a1my5KYU/pub?output=csv";
 
